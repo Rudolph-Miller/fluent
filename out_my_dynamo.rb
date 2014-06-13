@@ -1,6 +1,6 @@
 module Fluent
-				class Dynamo_Output < BufferedOutput
-								Fluent::Plugin.register_output('dynamo', self)
+				class MyDynamo_Output < BufferedOutput
+								Fluent::Plugin.register_output('mydynamo', self)
 								attr_reader :host, :port, :kpi_items
 
 								def initialize

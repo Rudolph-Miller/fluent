@@ -10,7 +10,7 @@ class LogTaiInput < Fluent::TailInput
 		end
 
 		def parse_line(line)
-				format = /^(?<id>[^ ]+)\s+(?<date>\d+)\s+(?<ad_id>[^ ]+)\s(?<pub_id>[^ ]+)\s(?<value>.*)$/
+				format = /(?:^|\t)+(?:^|)$/
 				parser = Fluent::TextParser::RegexpParser.new(format)
 				record = parser.call(line)
 				return record
